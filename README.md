@@ -65,14 +65,35 @@ Bu projeyi bilgisayarınızda çalıştırmak için aşağıdaki adımları izle
 - Herhangi bir kod editörü (VS Code, IntelliJ IDEA, Eclipse).
 
 ### Terminal ile Çalıştırma
-Bir dosyayı derlemek ve çalıştırmak için:
+
+> **Önemli:** Klasör adları sıra numarası taşır (`01_Basics`), paket adları ise taşımaz (`package Basics;`).
+> Bu yüzden derleme **proje kök dizininden** yapılmalı ve `-d` ile ayrı bir çıktı klasörü verilmelidir.
+> Klasörün içine girip `javac HelloWorld.java` demek `ClassNotFoundException` verir.
 
 ```bash
-# Örnek: HelloWorld.java'yı çalıştırma
-cd 01_Basics
-javac HelloWorld.java
-java Basics.HelloWorld
+# Örnek: HelloWorld.java'yı çalıştırma (proje kök dizinindeyken)
+javac -d out 01_Basics/HelloWorld.java
+java -cp out Basics.HelloWorld
 ```
+
+Başka bir örneği çalıştırmak için yolu ve paket adını değiştirmeniz yeterli:
+
+```bash
+# Örnek: HashMapDemo.java'yı çalıştırma
+javac -d out 07_Collections/HashMapDemo.java
+java -cp out Collections.HashMapDemo
+```
+
+| Klasör | Paket adı |
+|:---|:---|
+| `01_Basics` | `Basics` |
+| `02_ControlFlow` | `ControlFlow` |
+| `03_Arrays_Strings` | `ArraysStrings` |
+| `04_Methods` | `Methods` |
+| `05_OOP_Basics` | `OOP_Basics` |
+| `06_OOP_Advanced` | `OOP_Advanced` |
+| `07_Collections` | `Collections` |
+| `08_Exceptions_IO` | `Exceptions_IO` |
 
 ### IDE ile Çalıştırma
 Projeyi favori IDE'niz ile açın (Open Folder / Open Project diyerek `java-notes` klasörünü seçin). Ardından çalıştırmak istediğiniz dosyaya sağ tıklayıp **Run** diyerek kolayca çalıştırabilirsiniz.
