@@ -9,10 +9,13 @@ public class HashMapDemo {
 
         HashMap<Integer, String> plakalar = new HashMap<>(); // <KeyTipi, ValueTipi>
 
+        // DİKKAT: Sayının başına 0 yazmayın! Java bunu oktal (8'lik) sayı sayar.
+        // put(06, ...) anahtarı 06 değil 6 olur; put(08, ...) ise derleme hatası verir:
+        // "illegal digit in an octal literal". Bu yüzden plakalar baştaki sıfır olmadan yazılır.
         plakalar.put(34, "İstanbul");
-        plakalar.put(06, "Ankara");
+        plakalar.put(6, "Ankara");
         plakalar.put(35, "İzmir");
-        plakalar.put(01, "Adana");
+        plakalar.put(1, "Adana");
 
         System.out.println("Plakalar: " + plakalar);
 
